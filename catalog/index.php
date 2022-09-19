@@ -1,7 +1,10 @@
-<?
+<?php
+
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Каталог");
-?><?$APPLICATION->IncludeComponent(
+$APPLICATION->SetTitle("");
+?><?$APPLICATION->SetTitle("Каталог");?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
 	"catalog-main",
 	Array(
@@ -9,7 +12,7 @@ $APPLICATION->SetTitle("Каталог");
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_PICT_PROP" => "-",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
-		"ADD_SECTIONS_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -50,7 +53,7 @@ $APPLICATION->SetTitle("Каталог");
 		"DETAIL_STRICT_SECTION_CHECK" => "N",
 		"DETAIL_USE_COMMENTS" => "N",
 		"DETAIL_USE_VOTE_RATING" => "N",
-		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
+		"DISABLE_INIT_JS_IN_COMPONENT" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_ELEMENT_SELECT_BOX" => "N",
 		"DISPLAY_PANEL" => "Y",
@@ -84,7 +87,7 @@ $APPLICATION->SetTitle("Каталог");
 		"LIST_META_DESCRIPTION" => "-",
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
-		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false}]",
+		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false}]",
 		"LIST_PROPERTY_CODE" => "",
 		"LIST_PROPERTY_CODE_MOBILE" => array(),
 		"LIST_SHOW_SLIDER" => "N",
@@ -104,9 +107,9 @@ $APPLICATION->SetTitle("Каталог");
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "Y",
-		"PAGER_TEMPLATE" => "orange",
+		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "",
-		"PAGE_ELEMENT_COUNT" => "5",
+		"PAGE_ELEMENT_COUNT" => "12",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PATH_TO_SMILE" => "/bitrix/images/forum/smile/",
 		"PRICE_CODE" => array(),
@@ -164,7 +167,7 @@ $APPLICATION->SetTitle("Каталог");
 		"USER_CONSENT_IS_LOADED" => "N",
 		"USE_CAPTCHA" => "Y",
 		"USE_COMPARE" => "Y",
-		"USE_ELEMENT_COUNTER" => "Y",
+		"USE_ELEMENT_COUNTER" => "N",
 		"USE_ENHANCED_ECOMMERCE" => "N",
 		"USE_FILTER" => "N",
 		"USE_MAIN_ELEMENT_SECTION" => "N",

@@ -3,7 +3,7 @@
 <footer class="footer animated">
     <div class="container">
         <div class="footer-wrap">
-            <a href="index.php" class="footer__logo">
+            <a href="<?= $GLOBALS['lang'] ? $GLOBALS['lang'] : '/'; ?>" class="footer__logo">
                 <svg width="192" height="38" viewBox="0 0 192 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 38V0H34.8113V4.47401H4.35849V16.7339H32.0943V21.208H4.35849V37.9419H0V38Z"
                           fill="black"/>

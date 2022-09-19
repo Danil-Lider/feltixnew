@@ -1,5 +1,9 @@
 <?php
 
+// ini_set('error_reporting', E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+
 
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 $eventManager->addEventHandler('landing', 'onHookExec',
@@ -46,4 +50,71 @@ function convert_bytes($size)
     case 1: return $size .= ' КБ';
     case 2: return $size .= ' МБ';
   }
+}
+
+
+if(SITE_ID == 's2'){
+
+    $lang = '/en';
+
+}else{
+
+    $lang = '';
+}
+
+$GLOBALS['lang'] = $lang;
+
+
+
+// ДЕЛАЕМ ПОЛЬЗОВАТЕЛЕЙ НЕАТИВНЫМИ
+
+AddEventHandler("main", "OnBeforeUserRegister", Array("MyClass", "OnBeforeUserRegisterHandler"));class MyClass
+{
+   function OnBeforeUserRegisterHandler(&$arFields)
+    {
+        $arFields["ACTIVE"] = "N";
+           
+    }
+}
+
+
+
+function array_to_string($array) {
+    ob_start();
+    var_dump($array);
+    return ob_get_clean();
+}
+
+
+AddEventHandler("main", "OnAfterUserUpdate", Array("MyClassNew", "OnAfterUserUpdateHandler"));
+
+class MyClassNew
+{
+    // создаем обработчик события "OnAfterUserUpdate"
+    function OnAfterUserUpdateHandler(&$arFields)
+    {
+        if($arFields["RESULT"]){
+
+          if($arFields['ACTIVE'] == 'Y'){
+
+              AddMessage2Log("Запись с EMAIL ".$arFields." изменена.");
+              $to      = $arFields["EMAIL"];
+              $subject = 'Ваш аккаунт теперь активный !';
+              //$message = '<pre>' . array_to_string($arFields) . '</pre>';
+              $message = 'Ваш аккаунт теперь активный ! ссылка на закрытый доступ: http://ksburo.beget.tech/close/';
+              $headers = 'From: webmaster@example.com' . "\r\n" .
+                  'Reply-To: webmaster@example.com' . "\r\n" .
+                  'X-Mailer: PHP/' . phpversion();
+
+              mail($to, $subject, $message, $headers);
+
+          }
+
+
+        }else{
+
+            AddMessage2Log("Ошибка изменения записи ".$arFields["ID"]." (".$arFields["RESULT_MESSAGE"].").");
+        }
+            // AddMessage2Log("Запись с кодом ".$arFields["ID"]." изменена.");
+    }
 }

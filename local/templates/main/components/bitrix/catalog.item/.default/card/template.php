@@ -23,6 +23,10 @@ use \Bitrix\Main\Localization\Loc;
  */
 ?>
 
+<?
+	// debug($item);
+// /local/templates/main/components/bitrix/catalog.section/main-catalog-section-elements-new/images/no_photo.png
+?>
 
 <a href="<?=$item["DETAIL_PAGE_URL"]?>" class="products-card active">
 	<img src="<?=$item["PREVIEW_PICTURE"]["SRC"]?>" alt="" loading="lazy">

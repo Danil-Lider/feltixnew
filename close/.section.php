@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Закрытый ";
+$arDirProperties = Array(
+
+);
+?>

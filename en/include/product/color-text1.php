@@ -1,0 +1,1 @@
+When developing the color palette, we are guided by modern design trends and eternal examples from nature. As a natural gem, our products delight the eye with natural shades and a long service life

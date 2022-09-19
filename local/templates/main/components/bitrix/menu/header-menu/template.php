@@ -9,7 +9,7 @@ foreach($arResult as $arItem):
 		continue;
 ?>
 	<?if($arItem["SELECTED"]):?>
-		<li class='header__menu-item'><a href="<?=$arItem["LINK"]?>" class="selected"><?=$arItem["TEXT"]?></a></li>
+		<li class='header__menu-item active'><a href="<?=$arItem["LINK"]?>" class="selected"><?=$arItem["TEXT"]?></a></li>
 	<?else:?>
 		<li class='header__menu-item'><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
 	<?endif?>

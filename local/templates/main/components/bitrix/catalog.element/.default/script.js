@@ -472,8 +472,8 @@
 				this.smallCardNodes.aligner = this.getEntity(this.obProduct, 'main-button-container');
 			}
 
-			this.initPopup();
-			this.initTabs();
+			// this.initPopup();
+			// this.initTabs();
 
 			if (this.smallCardNodes.panel)
 			{

@@ -19,24 +19,10 @@ $this->setFrameMode(true);
  <section class="faq">
     <div class="container">
         <h1 class="faq__title slideInUp">
-            FAQ
+            <!-- FAQ -->
         </h1>
         <div class="faq-wrap slideInUp">
             <img class="faq-wrap__img" src="<?= SITE_TEMPLATE_PATH?>/public/images/faqImg.png" alt="">
-            <div class="faq-accord__item">
-                <div class="faq-accord__title">
-                    <p>
-                        Каков срок поставки?
-                    </p>
-                </div>
-                <div class="faq-accord__desc">
-                    Листовой и рулонный войлок мы храним в большом количестве на складе компании.
-                    Срок производства стандартных изделий не превышает двух недель. Элементы индивидуального дизайна
-                    с использованием резки мы выполняем максимум за три недели; объемные, требующие изготовления
-                    матрицы, продукты в рамках пяти недель с дату согласования чертежей.
-                </div>
-            </div>
-
 
 
 			<?foreach($arResult["ITEMS"] as $arItem):?>
@@ -64,8 +50,6 @@ $this->setFrameMode(true);
         </div>
     </div>
 </section>
-
-
 
 
 

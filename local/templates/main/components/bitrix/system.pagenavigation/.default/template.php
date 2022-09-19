@@ -54,12 +54,23 @@ $navQueryString      = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryS
 $navQueryStringFull  = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
 
 ?>
+
+
+<? if($arResult['NavPageCount'] > 1){ ?>
+
 <div class="products-pagination animated active">
-   
+
+   	<?// debug($arResult); ?>
+
+   	<? if($arResult['NavPageNomer'] > 3 ){?>
+
+   		<a class="products-pagination__link " href="<?php echo $arResult["sUrlPath"] ?>?<?php echo $navQueryString ?>PAGEN_1=1">...</a>
+
+   	<? } ?>
+
     <?php while ($arResult["nStartPage"] <= $arResult["nEndPage"]) { ?>
         <?php if ($arResult["nStartPage"] == $arResult["NavPageNomer"]) { ?>
         	  <a class="products-pagination__link active" href="<?php echo $arResult["sUrlPath"] ?><?php echo $navQueryStringFull ?>"><?php echo $arResult["nStartPage"] ?></a>
-            <!-- <span class="active"><?php// echo $arResult["nStartPage"] ?></span> -->
 
         <?php } elseif ((1 == $arResult["nStartPage"]) && (false == $arResult["bSavePage"])) { ?>
             <a class="products-pagination__link " href="<?php echo $arResult["sUrlPath"] ?><?php echo $navQueryStringFull ?>"><?php echo $arResult["nStartPage"] ?></a>
@@ -68,7 +79,23 @@ $navQueryStringFull  = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQu
         <?php } ?>
         <?php $arResult["nStartPage"]++ ?>
     <?php } ?>
+
+
+    <? if(($arResult['NavPageCount']-2) > $arResult['NavPageNomer']){?>
+
+   		
+        <a href="<?php echo $arResult["sUrlPath"] ?>?<?php echo $navQueryString ?>PAGEN_<?php echo $arResult["NavNum"] ?>=<?= $arResult['NavPageCount'] ; ?>" class="products-pagination__link">...<?//= $arResult['NavPageCount'] ?></a>
+
+   	<? } ?>
+    
+       
+        <!-- </li> -->
+    <?//php endif; ?>
+
+
 </div>
 
+  <? } ?>
+    
 
 

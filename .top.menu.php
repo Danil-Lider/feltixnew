@@ -41,6 +41,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Загрузки", 
+		"/close/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>

@@ -1,0 +1,1 @@
+The colors on the monitor screen may differ from the actual color of the product. Contact us through the section for Dealers and Architects and we will arrange for you to deliver a set of samples.

@@ -1,16 +1,45 @@
-<?
-define("NEED_AUTH", true);
+<?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");?>
 
-if (isset($_REQUEST["backurl"]) && strlen($_REQUEST["backurl"])>0) 
-	LocalRedirect($backurl);
 
-$APPLICATION->SetTitle("Авторизация");
+<div class="main">
+<section class="contacts">
+    <div class="container">
+        <h1 class="contacts__title slideInUp"><?$APPLICATION->ShowTitle(false);?></h1>
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.auth.form",
+	"auth.main.feltix",
+	Array(
+		"AUTH_FORGOT_PASSWORD_URL" => "/auth/forget.php",
+		"AUTH_REGISTER_URL" => "/auth/registration.php",
+		"AUTH_SUCCESS_URL" => "/close/"
+	)
+);?>
+
+
+<?php
+
+$logout = $APPLICATION->GetCurPageParam(
+    "logout=yes",
+    array(
+        "login",
+        "logout",
+        "register",
+        "forgot_password",
+        "change_password"
+    )
+);
 ?>
-<p>Вы зарегистрированы и успешно авторизовались.</p>
- 
-<p>Используйте административную панель в верхней части экрана для быстрого доступа к функциям управления структурой и информационным наполнением сайта. Набор кнопок верхней панели отличается для различных разделов сайта. Так отдельные наборы действий предусмотрены для управления статическим содержимым страниц, динамическими публикациями (новостями, каталогом, фотогалереей) и т.п.</p>
- 
-<p><a href="<?=SITE_DIR?>">Вернуться на главную страницу</a></p>
 
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+
+ </div>
+</section>
+</div>
+ <!-- <a href="<?= $logout; ?>">выйти</a> -->
+
+
+ <?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
+?>

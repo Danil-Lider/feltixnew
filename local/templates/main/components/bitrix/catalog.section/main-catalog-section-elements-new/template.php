@@ -263,119 +263,133 @@ $containerName = 'container-'.$navParams['NavNum'];
 			array('HIDE_ICONS' => 'Y')
 		);
 	}
-?>
+?>	
+
+		
+	 <!-- <div class="products-pagination animated"> -->
+               
+        <?=$arResult['NAV_STRING']?>
+    <!-- </div> -->
 
 
-
+<!-- 1111111111111 -->
            
         </div>
 
         <?
 
-        $IBLOCK_ID = 2;
+  //       $IBLOCK_ID = $arParams['IBLOCK_ID'];
+		// $IBLOCK_TYPE = $arParams['IBLOCK_TYPE'];
+
+  //       // $IBLOCK_ID = 2;
 
 
-        // ПОЛУЧЕНИЕ РАЗДЕЛОВ И ИХ ЭЛЕМЕНТОВ
+  //       // ПОЛУЧЕНИЕ РАЗДЕЛОВ И ИХ ЭЛЕМЕНТОВ
 
-        \Bitrix\Main\Loader::IncludeModule('iblock');
+  //       \Bitrix\Main\Loader::IncludeModule('iblock');
 
-        $arFilter = [
-        'IBLOCK_ID' => $IBLOCK_ID
-        ];
+  //       $arFilter = [
+  //       'IBLOCK_ID' => $IBLOCK_ID
+  //       ];
 
-        $arOrder = ['LEFT_MARGIN' => 'ASC'];
+  //       $arOrder = ['LEFT_MARGIN' => 'ASC'];
 
 
-        $arSelect = ['ID','LEFT_MARGIN','DEPTH_LEVEL','NAME',"CODE"];
+  //       $arSelect = ['ID','LEFT_MARGIN','DEPTH_LEVEL','NAME',"CODE"];
 
-        $resSections = \CIBlockSection::GetList($arOrder, $arFilter, false, $arSelect);
+  //       $resSections = \CIBlockSection::GetList($arOrder, $arFilter, false, $arSelect);
 
-        while( $arSection = $resSections->fetch() )
-        {
+  //       while( $arSection = $resSections->fetch() )
+  //       {
 
-            $arSectionID = $arSection['ID'];
+  //           $arSectionID = $arSection['ID'];
 
             ?>
 
 
-            <div class="products-tabs">
+            <!-- <div class="products-tabs"> -->
 
             	<?
 
-            	$APPLICATION->IncludeComponent(
-					"bitrix:news.list",
-					"catalog-main-show-all",
-					Array(
-						"ACTIVE_DATE_FORMAT" => "d.m.Y",
-						"ADD_SECTIONS_CHAIN" => "N",
-						"AJAX_MODE" => "N",
-						"AJAX_OPTION_ADDITIONAL" => "",
-						"AJAX_OPTION_HISTORY" => "N",
-						"AJAX_OPTION_JUMP" => "N",
-						"AJAX_OPTION_STYLE" => "Y",
-						"CACHE_FILTER" => "N",
-						"CACHE_GROUPS" => "Y",
-						"CACHE_TIME" => "36000000",
-						"CACHE_TYPE" => "A",
-						"CHECK_DATES" => "Y",
-						"COMPONENT_TEMPLATE" => "catalog-main-show-all",
-						"DETAIL_URL" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
-						"DISPLAY_BOTTOM_PAGER" => "N",
-						"DISPLAY_DATE" => "Y",
-						"DISPLAY_NAME" => "Y",
-						"DISPLAY_PICTURE" => "Y",
-						"DISPLAY_PREVIEW_TEXT" => "Y",
-						"DISPLAY_TOP_PAGER" => "N",
-						"FIELD_CODE" => array(0=>"",1=>"",),
-						"FILTER_NAME" => "",
-						"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-						"IBLOCK_ID" => "2",
-						"IBLOCK_TYPE" => "catalog",
-						"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-						"INCLUDE_SUBSECTIONS" => "Y",
-						"MESSAGE_404" => "",
-						"NEWS_COUNT" => "20",
-						"PAGER_BASE_LINK_ENABLE" => "N",
-						"PAGER_DESC_NUMBERING" => "N",
-						"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-						"PAGER_SHOW_ALL" => "N",
-						"PAGER_SHOW_ALWAYS" => "N",
-						"PAGER_TEMPLATE" => ".default",
-						"PAGER_TITLE" => "Новости",
-						"PARENT_SECTION" => $arSectionID,
-						"PARENT_SECTION_CODE" => "",
-						"PREVIEW_TRUNCATE_LEN" => "",
-						"PROPERTY_CODE" => array(0=>"",1=>"",),
-						"SET_BROWSER_TITLE" => "N",
-						"SET_LAST_MODIFIED" => "N",
-						"SET_META_DESCRIPTION" => "N",
-						"SET_META_KEYWORDS" => "N",
-						"SET_STATUS_404" => "N",
-						"SET_TITLE" => "N",
-						"SHOW_404" => "N",
-						"SORT_BY1" => "ACTIVE_FROM",
-						"SORT_BY2" => "SORT",
-						"SORT_ORDER1" => "DESC",
-						"SORT_ORDER2" => "ASC",
-						"STRICT_SECTION_CHECK" => "N"
-					)
-				);
+    //         	$APPLICATION->IncludeComponent(
+				// 	"bitrix:news.list",
+				// 	"catalog-main-show-all",
+				// 	Array(
+				// 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+				// 		"ADD_SECTIONS_CHAIN" => "N",
+				// 		"AJAX_MODE" => "N",
+				// 		"AJAX_OPTION_ADDITIONAL" => "",
+				// 		"AJAX_OPTION_HISTORY" => "N",
+				// 		"AJAX_OPTION_JUMP" => "N",
+				// 		"AJAX_OPTION_STYLE" => "Y",
+				// 		"CACHE_FILTER" => "N",
+				// 		"CACHE_GROUPS" => "Y",
+				// 		"CACHE_TIME" => "36000000",
+				// 		"CACHE_TYPE" => "A",
+				// 		"CHECK_DATES" => "Y",
+				// 		"COMPONENT_TEMPLATE" => "catalog-main-show-all",
+				// 		"DETAIL_URL" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+				// 		"DISPLAY_BOTTOM_PAGER" => "N",
+				// 		"DISPLAY_DATE" => "Y",
+				// 		"DISPLAY_NAME" => "Y",
+				// 		"DISPLAY_PICTURE" => "Y",
+				// 		"DISPLAY_PREVIEW_TEXT" => "Y",
+				// 		"DISPLAY_TOP_PAGER" => "N",
+				// 		"FIELD_CODE" => array(0=>"",1=>"",),
+				// 		"FILTER_NAME" => "",
+				// 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+				// 		"IBLOCK_ID" => $IBLOCK_ID,
+				// 		"IBLOCK_TYPE" => $IBLOCK_TYPE,
+				// 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+				// 		"INCLUDE_SUBSECTIONS" => "Y",
+				// 		"MESSAGE_404" => "",
+				// 		"NEWS_COUNT" => "20",
+				// 		"PAGER_BASE_LINK_ENABLE" => "N",
+				// 		"PAGER_DESC_NUMBERING" => "N",
+				// 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+				// 		"PAGER_SHOW_ALL" => "N",
+				// 		"PAGER_SHOW_ALWAYS" => "N",
+				// 		"PAGER_TEMPLATE" => ".default",
+				// 		"PAGER_TITLE" => "Новости",
+				// 		"PARENT_SECTION" => $arSectionID,
+				// 		"PARENT_SECTION_CODE" => "",
+				// 		"PREVIEW_TRUNCATE_LEN" => "",
+				// 		"PROPERTY_CODE" => array(0=>"",1=>"",),
+				// 		"SET_BROWSER_TITLE" => "N",
+				// 		"SET_LAST_MODIFIED" => "N",
+				// 		"SET_META_DESCRIPTION" => "N",
+				// 		"SET_META_KEYWORDS" => "N",
+				// 		"SET_STATUS_404" => "N",
+				// 		"SET_TITLE" => "N",
+				// 		"SHOW_404" => "N",
+				// 		"SORT_BY1" => "ACTIVE_FROM",
+				// 		"SORT_BY2" => "SORT",
+				// 		"SORT_ORDER1" => "DESC",
+				// 		"SORT_ORDER2" => "ASC",
+				// 		"STRICT_SECTION_CHECK" => "N"
+				// 	)
+				// );
 
 				?>
 
+            <!-- </div> -->
+
+              <?//=$arResult['NAV_STRING']?>
+
+        <?// } ?> 
+
+        	<?//=$arResult['NAV_STRING']?>
+        	<!-- 1111111111111 -->
+
             </div>
-
-        <? } ?> 
-
-
-            </div>
-            <div class="products-pagination animated">
-               <!--  <a href="#" class="products-pagination__link active">1</a>
+           <!--  <div class="products-pagination animated">
+                <a href="#" class="products-pagination__link active">1</a>
                 <a href="#" class="products-pagination__link">2</a>
                 <a href="#" class="products-pagination__link">3</a>
-                <a href="#" class="products-pagination__link">4</a> -->
-                <?=$arResult['NAV_STRING']?>
-            </div>
+                <a href="#" class="products-pagination__link">4</a>
+                <?//=$arResult['NAV_STRING']?>
+
+            </div> -->
         </div>
     </div>
 </section>

@@ -9,12 +9,21 @@ $APPLICATION->SetTitle("contacts");
 
 <section class="contacts">
             <div class="container">
-                <h1 class="contacts__title slideInUp">Контакты</h1>
+                <h1 class="contacts__title slideInUp"><?$APPLICATION->ShowTitle(false);?></h1>
                 <div class="contacts__wrap slideInUp">
                     <div class="contacts__item">
                         <div class="contacts-phones">
                         <span>
-                            Телефон:
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "include/inc_contacts_phone_1.php"
+                                )
+                            );?>
                         </span>
                             
                             <?$APPLICATION->IncludeComponent(

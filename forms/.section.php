@@ -1,0 +1,6 @@
+<?
+$sSectionName = "forms";
+$arDirProperties = Array(
+
+);
+?>

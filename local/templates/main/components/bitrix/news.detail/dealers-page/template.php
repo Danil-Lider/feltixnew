@@ -29,7 +29,7 @@ $this->setFrameMode(true);
 				<?echo $arResult["DETAIL_TEXT"];?>
 			</p>
 		</div>
-		<a href="#" class="dealers__link btn-link slideInUp">
+		<a href="/auth/?register=yes" class="dealers__link btn-link slideInUp">
 			Зарегистрироваться
 		</a>
 	</div>

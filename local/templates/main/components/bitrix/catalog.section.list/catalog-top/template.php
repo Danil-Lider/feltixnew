@@ -74,19 +74,71 @@ if (0 < $arResult["SECTIONS_COUNT"])
 {
 ?>
 
+<?
 
+// debug($arParams['THIS_SECTION_ID']);
+	
+?>
 
  <!--products-->
 <section class="products">
     <div class="container">
         <h1 class="products__title slideInUp">
-            Продукты
+
+        	<? if(SITE_ID == 's2'){ ?>
+
+				Products
+
+        	<? }else{ ?>
+
+        		Продукты
+
+        	<? } ?>
         </h1>	
-        <div class="products-wrap">
-            <a href="ideas.php" class="products-wrap__link slideInUp">Ваши идеи</a>
-            <button class="products-wrap__mobileBtn">Все продукты</button>	
+        <div class="products-wrap"> 
+
+            <a href="<?= $GLOBALS['lang']?>/ideas.php" class="products-wrap__link slideInUp">
+
+            	<? if(SITE_ID == 's2'){ ?>
+
+					Your ideas
+
+	        	<? }else{ ?>
+
+	        		Ваши идеи
+	        		
+	        	<? } ?>
+
+           
+        	</a>
+            <button class="products-wrap__mobileBtn">
+
+            	<? if(SITE_ID == 's2'){ ?>
+
+					All products
+
+	        	<? }else{ ?>
+
+	        		Все продукты
+	        		
+	        	<? } ?>
+           
+
+        	</button>	
             <div class="products-btns slideInUp">
-                <button class="products__btn active">Все продукты</button>
+                <a href="/catalog/" class="products__btn <? if(!$arParams['THIS_SECTION_ID']){?> active <? } ?>">
+                		
+                		<? if(SITE_ID == 's2'){ ?>
+
+							All products
+
+			        	<? }else{ ?>
+
+			        		Все продукты
+			        		
+			        	<? } ?>
+
+                </a>
                 <!-- <button class="products__btn"><?// echo $arSection['NAME']; ?></button> -->
 
 				<?
@@ -114,7 +166,15 @@ if (0 < $arResult["SECTIONS_COUNT"])
 									);
 								?>
 
-								<button class="products__btn"><? echo $arSection['NAME']; ?></button>
+								<?
+
+								// debug($);
+
+								?>
+
+								<a class="<? if($arParams['THIS_SECTION_ID'] == $arSection['ID']){?> active <? } ?> products__btn" href="<?= $arSection['SECTION_PAGE_URL']?>"><? echo $arSection['NAME']; ?></a>
+
+								<!-- <button class="products__btn"><?// echo $arSection['NAME']; ?></button> -->
 
 
 								<?

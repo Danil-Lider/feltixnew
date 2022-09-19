@@ -1,43 +1,55 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("О компании");
-?>
-
-    <main class="main">
-        <section class="about-page">
-            <div class="container">
-                <div class="about-page__wrap">
-                    <div class="about-page__content">
-                        <h1 class="about-page__title slideInUp">
-                            О компании
-                        </h1>
-                        <p class="about-page__subtitle slideInUp">
-                            FeltX - российская компания, специализирующаяся на искусственном войлоке.
-                        </p>
-                        <div class="about-page__content-wrap slideInUp">
-                            <p>
-                                Мы занимаемся производством акустических и мебельных решений, а также поставкой
-                                листового материала. Нашей главной целью является снабжение покупателя широким спектром
-                                экологически чистых изделий из фетра. Мы разрабатываем акустические решения, используя
-                                уникальный и продуманный дизайн для всех помещений, чтобы создать благоприятную
-                                атмосферу в любом пространстве. У нас есть желание работать вместе с архитекторами,
-                                дизайнерами интерьеров и менеджерами объектов, чтобы предложить наилучшие акустические и
-                                декоративные результаты для интерьеров.
-                            </p>
-                        </div>
-                    </div>
-                    <asside class="about-page__sidebar slideInUp">
-                        <img src="<?= SITE_TEMPLATE_PATH?>/public/images/sidebarImg.jpg" alt="">
-                        <ul>
-                            <li>Свое производство</li>
-                            <li>Дизайнеры</li>
-                            <li>Проекты лучших архитекторов</li>
-                        </ul>
-                        <button class="about-page__sidebar-btn">Заказать проект</button>
-                    </asside>
-                </div>
-            </div>
-        </section>
-
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:news.detail",
+	"about-page",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"ELEMENT_CODE" => "",
+		"ELEMENT_ID" => "52",
+		"FIELD_CODE" => array("",""),
+		"IBLOCK_ID" => "15",
+		"IBLOCK_TYPE" => "ABOUT_EN",
+		"IBLOCK_URL" => "",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"MESSAGE_404" => "",
+		"META_DESCRIPTION" => "-",
+		"META_KEYWORDS" => "-",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Страница",
+		"PROPERTY_CODE" => array("",""),
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_CANONICAL_URL" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"STRICT_SECTION_CHECK" => "N",
+		"USE_PERMISSIONS" => "N",
+		"USE_SHARE" => "N"
+	)
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

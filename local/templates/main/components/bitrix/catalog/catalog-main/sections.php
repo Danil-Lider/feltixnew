@@ -44,7 +44,11 @@ $APPLICATION->IncludeComponent(
 	$component,
 	($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? array("HIDE_ICONS" => "Y") : array())
 );
+
 unset($sectionListParams);
+
+
+// echo "111111111";
 
 if ($arParams["USE_COMPARE"] === "Y")
 {
@@ -77,6 +81,8 @@ if ($arParams["SHOW_TOP_ELEMENTS"] !== "N")
 	{
 		$basketAction = isset($arParams['TOP_ADD_TO_BASKET_ACTION']) ? $arParams['TOP_ADD_TO_BASKET_ACTION'] : '';
 	}
+
+	echo "1111111";
 
 	$APPLICATION->IncludeComponent(
 		"bitrix:catalog.top",
@@ -165,6 +171,12 @@ if ($arParams["SHOW_TOP_ELEMENTS"] !== "N")
 
 
 
+
+$IBLOCK_ID = $arParams['IBLOCK_ID'];
+$IBLOCK_TYPE = $arParams['IBLOCK_TYPE'];
+$PAGE_ELEMENT_COUNT = $arParams['PAGE_ELEMENT_COUNT'];
+
+// debug($arParams);
 ?>
 
 
@@ -202,12 +214,12 @@ if ($arParams["SHOW_TOP_ELEMENTS"] !== "N")
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"ENLARGE_PRODUCT" => "STRICT",
 		"FILTER_NAME" => "arrFilter",
-		"IBLOCK_ID" => "2",
-		"IBLOCK_TYPE" => "catalog",
+		"IBLOCK_ID" => $IBLOCK_ID,
+		"IBLOCK_TYPE" => $IBLOCK_TYPE,
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => "",
 		"LAZY_LOAD" => "N",
-		"LINE_ELEMENT_COUNT" => "6",
+		"LINE_ELEMENT_COUNT" => $PAGE_ELEMENT_COUNT,
 		"LOAD_ON_SCROLL" => "N",
 		"MESSAGE_404" => "",
 		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
@@ -225,7 +237,7 @@ if ($arParams["SHOW_TOP_ELEMENTS"] !== "N")
 		"PAGER_SHOW_ALWAYS" => "Y",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Товары",
-		"PAGE_ELEMENT_COUNT" => "6",
+		"PAGE_ELEMENT_COUNT" => $PAGE_ELEMENT_COUNT,
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array(),
 		"PRICE_VAT_INCLUDE" => "Y",

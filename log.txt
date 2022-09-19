@@ -1,0 +1,99 @@
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:18:36
+Module: 
+Запись с кодом 8 изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:20:10
+Module: 
+Запись с EMAIL marfol@inbox.ru изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:22:01
+Module: 
+Запись с EMAIL marfol@inbox.ru изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:23:56
+Module: 
+Запись с EMAIL 8 изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:24:49
+Module: 
+Запись с EMAIL Array изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:26:24
+Module: 
+Запись с EMAIL Array изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:26:47
+Module: 
+Запись с EMAIL Array изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:28:52
+Module: 
+Запись с EMAIL Array изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/close/index.php:39
+----------
+Host: ksburo.beget.tech
+Date: 2022-08-30 20:29:20
+Module: 
+Запись с EMAIL Array изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------
+Host: ksburo.beget.tech
+Date: 2022-09-05 20:57:26
+Module: 
+Запись с EMAIL Array изменена.
+    MyClassNew::OnAfterUserUpdateHandler < call_user_func_array < ExecuteModuleEventEx < CAllUser::Update < require_once
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/module.php:475
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/classes/general/user.php:2817
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/modules/main/admin/user_edit.php:300
+	/home/k/ksburo/ksburo.beget.tech/public_html/bitrix/admin/user_edit.php:2
+----------

@@ -136,77 +136,45 @@ $APPLICATION->SetTitle('Главная');
                 <h2>
                     Продукты
                 </h2>
-                <div class="products-main__wrap">
-                    <div class="products-main__wrap-images">
-                        <div class="products-main__wrap-images_item active">
-                            <img class="back-image active" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg1.jpg" alt="">
-                            <img class="front-image active" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg3.jpg" alt="">
-                        </div>
-                        <div class="products-main__wrap-images_item">
-                            <img class="back-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg1.jpg" alt="">
-                            <img class="front-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg2.jpg" alt="">
-                        </div>
-                        <div class="products-main__wrap-images_item">
-                            <img class="back-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg5.jpg" alt="">
-                            <img class="front-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg1.jpg" alt="">
-                        </div>
-                        <div class="products-main__wrap-images_item">
-                            <img class="back-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg1.jpg" alt="">
-                            <img class="front-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg6.jpg" alt="">
-                        </div>
-                        <div class="products-main__wrap-images_item">
-                            <img class="back-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg1.jpg" alt="">
-                            <img class="front-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg7.jpg" alt="">
-                        </div>
-                        <div class="products-main__wrap-images_item">
-                            <img class="back-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg1.jpg" alt="">
-                            <img class="front-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg5.jpg" alt="">
-                        </div>
-                        <div class="products-main__wrap-images_item">
-                            <img class="back-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg1.jpg" alt="">
-                            <img class="front-image" src="<?= SITE_TEMPLATE_PATH ?>/public/images/productsImg5.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="products-main__wrap-list">
-                        <ul>
-                            <li class="active">
-                                <a href="">
-                                    Настенные панели
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Напольные перегородки
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Подвесные перегородки
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Потолочные конструкции
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Абажуры
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Настольные экраны
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Ваша идея
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+               
+
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:catalog.section.list",
+                    "catalog-clean-links-sub-main-page",
+                    Array(
+                        "ADD_SECTIONS_CHAIN" => "N",
+                        "CACHE_FILTER" => "N",
+                        "CACHE_GROUPS" => "Y",
+                        "CACHE_TIME" => "36000000",
+                        "CACHE_TYPE" => "A",
+                        "COUNT_ELEMENTS" => "Y",
+                        "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+                        "FILTER_NAME" => "sectionsFilter",
+                        "IBLOCK_ID" => "2",
+                        "IBLOCK_TYPE" => "catalog",
+                        "SECTION_CODE" => "",
+                        "SECTION_FIELDS" => array("",""),
+                        "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                        "SECTION_URL" => "",
+                        "SECTION_USER_FIELDS" => array("",""),
+                        "SHOW_PARENT_NAME" => "Y",
+                        "TOP_DEPTH" => "2",
+                        "VIEW_MODE" => "LINE"
+                    )
+                );?>
+                                
+
+
+
+
+
+
+
+
+
+
+               
             </div>
         </section>
         <!--End of the products-main -->

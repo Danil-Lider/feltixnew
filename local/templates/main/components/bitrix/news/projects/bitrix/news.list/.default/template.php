@@ -18,7 +18,16 @@ $this->setFrameMode(true);
 <section class="projects">
     <div class="container">
         <h1 class="projects__title slideInUp">
-            Проекты
+            
+            <? if(SITE_ID == 's2'){ ?>
+
+				Projects
+
+        	<? }else{ ?>
+
+        		Проекты
+
+        	<? } ?>
         </h1>
         <div class="projects__wrap slideInUp-slower">
 

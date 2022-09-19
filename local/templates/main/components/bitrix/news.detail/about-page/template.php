@@ -41,7 +41,7 @@ $this->setFrameMode(true);
 				<ul>
 					<?echo $arResult["DETAIL_TEXT"];?>
 				</ul>
-				<button class="about-page__sidebar-btn">Заказать проект</button>
+				<button data-modal-name='order-project' class="about-page__sidebar-btn">Заказать проект</button>
 			</asside>
 		</div>
 	</div>

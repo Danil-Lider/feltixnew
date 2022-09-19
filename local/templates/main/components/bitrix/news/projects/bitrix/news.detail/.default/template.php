@@ -33,7 +33,7 @@ $this->setFrameMode(true);
            
         </div>
         <h1 class="single-project__title slideInUp">
-            Название проекта
+            <?= $arResult['NAME']?>
         </h1>
         <p class="single-project__author slideInUp-slower">
             Архитектор проекта: <?= $arResult["PROPERTIES"]['TITLE']['VALUE']  ?>

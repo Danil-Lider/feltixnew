@@ -16,7 +16,7 @@ use \Bitrix\Main\Localization\Loc;
 // $this->setFrameMode(true);
 // $this->addExternalCss('/bitrix/css/main/bootstrap.css');
 
-$templateLibrary = array('popup', 'fx');
+// $templateLibrary = array('popup', 'fx');
 $currencyList = '';
 
 if (!empty($arResult['CURRENCIES']))
@@ -162,6 +162,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 
    <section class="single-product"  id="<?=$itemIds['ID']?>" >
         <div class="container">
+        	<div class="images-container"></div>
             <div class="breadcrumbs slideInUp">
 
             	<?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
@@ -185,23 +186,58 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
             <h1 class="single-product__title slideInUp">
                 <?= $arResult['NAME']?>
             </h1>
-            <img class="single-product__img slideInUp-slower" src="<?= $arResult['DETAIL_PICTURE']['SRC']?>" alt="<?= $arResult['DETAIL_PICTURE']['ALT']?>">
+
+            <? if($arResult['DETAIL_PICTURE']['SRC']){ ?>
+
+
+            	<img class="single-product__img slideInUp-slower" src="<?= $arResult['DETAIL_PICTURE']['SRC']?>" alt="<?= $arResult['DETAIL_PICTURE']['ALT']?>">
+
+        	<? } ?>
+
+
             <p class="single-product__desc animated">
                <?= $arResult['DETAIL_TEXT']?>
 
             </p>
             <div class="single-product-colors animated">
                 <div class="single-product-colors__content">
-                    <h2>Разнообраные цвета</h2>
+                    <h2>
+                    	<?$APPLICATION->IncludeComponent(
+	                        "bitrix:main.include",
+	                        "",
+	                        Array(
+	                            "AREA_FILE_SHOW" => "file",
+	                            "AREA_FILE_SUFFIX" => "inc",
+	                            "EDIT_TEMPLATE" => "",
+	                            "PATH" => $GLOBALS['lang'] . "/include/product/title-color.php"
+	                        )
+	                    );?>
+                    </h2>
                     <p style="line-height: 25px">
-                        При развитии цветовой палитры мы руководствуемся современными тенденциями в дизайне и вечными
-                        примерами от природы. Как натуральный самоцвет, наша продукция радует глаз естественными
-                        оттенками и долгим сроком службы
+                    	<?$APPLICATION->IncludeComponent(
+	                        "bitrix:main.include",
+	                        "",
+	                        Array(
+	                            "AREA_FILE_SHOW" => "file",
+	                            "AREA_FILE_SUFFIX" => "inc",
+	                            "EDIT_TEMPLATE" => "",
+	                            "PATH" => $GLOBALS['lang'] . "/include/product/color-text1.php"
+	                        )
+	                    );?>
                     </p>
                     <p>
-                        <em>Цвета на экране монитора могут отличаться от действительного цвета продукта. Свяжитесь с
-                            нами через раздел для Дилеров и Архитекторв и мы организуем для вас доставку комплекта
-                            образцов.</em>
+                        <em>
+                        	<?$APPLICATION->IncludeComponent(
+	                        "bitrix:main.include",
+	                        "",
+	                        Array(
+	                            "AREA_FILE_SHOW" => "file",
+	                            "AREA_FILE_SUFFIX" => "inc",
+	                            "EDIT_TEMPLATE" => "",
+	                            "PATH" => $GLOBALS['lang'] . "/include/product/color-text2.php"
+	                        )
+	                    );?>
+                        </em>
                     </p>
                 </div>
                 <div class="single-product-colors__images">
@@ -209,7 +245,24 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                 </div>
             </div>
             <div class="single-product-gallery animated">
-                <h2>Фотогаллерея </h2>
+
+            	<? if($arResult["PROPERTIES"]['IMAGES']['VALUE']){ ?>
+
+	                <h2> <?//= $GLOBALS['main_site_url']?>
+	                	 <?$APPLICATION->IncludeComponent(
+	                        "bitrix:main.include",
+	                        "",
+	                        Array(
+	                            "AREA_FILE_SHOW" => "file",
+	                            "AREA_FILE_SUFFIX" => "inc",
+	                            "EDIT_TEMPLATE" => "",
+	                            "PATH" => $GLOBALS['lang'] . "/include/product/title-photo.php"
+	                        )
+	                    );?>
+	                </h2>
+
+	            <? } ?>
+
                 <div id="lightgallery" class="single-product-gallery__wrap">
                 	<!-- PROPERTIES IMAGES PROPERTY_VALUE_ID or VALUE -->
 
@@ -219,79 +272,114 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 	                        <img src="<?= CFile::GetPath($item); ?>" loading="lazy"/>
 	                    </a>
 
+
                     <? } ?>
 
                 </div>
-                <button class="single-product__showMore btn">Показать больше</button>
+
+                <? if(count($arResult["PROPERTIES"]['IMAGES']['VALUE']) >= 6){?>
+
+
+	                <button class="single-product__showMore btn">
+
+	            		<? if($GLOBALS['lang'] == ''){?>
+
+	            			 Показать больше
+
+	            		<? }else{ ?>
+
+	            			show more
+
+	            		<? } ?>
+
+	            	</button>
+
+	            <? } ?>
+
+
             </div>
             <div class="single-product-info animated">
-                <div class="single-product-info__item">
-                    <div class="single-product-info__title">
-                        <p>
-                            Техническое описание
-                        </p>
-                    </div>
-                    <div class="single-product-info__desc">
+
+            	<? if($arResult["PROPERTIES"]['TECH_OPISANIE1']['VALUE']){ ?>
+	                <div class="single-product-info__item">
+	                    <div class="single-product-info__title">
+	                        <p>
+	                        	 <?$APPLICATION->IncludeComponent(
+			                        "bitrix:main.include",
+			                        "",
+			                        Array(
+			                            "AREA_FILE_SHOW" => "file",
+			                            "AREA_FILE_SUFFIX" => "inc",
+			                            "EDIT_TEMPLATE" => "",
+			                            "PATH" => $GLOBALS['lang'] . "/include/product/title-tech.php"
+			                        )
+			                    );?>
+	                            <!-- Техническое описание -->
+	                        </p>
+	                    </div>
+	                    <div class="single-product-info__desc">
 
 
-                    	<!-- TECH_OPISANIE1 -->
+	                    	<!-- TECH_OPISANIE1 -->
 
-                    	<? foreach($arResult["PROPERTIES"]['TECH_OPISANIE1']['VALUE'] as $key => $item){ ?>
-
-
-	                        <div class="single-product-info__desc-content">
-	                            <span><?= $item ?></span>
-	                            <p><?= $arResult["PROPERTIES"]['TECH_OPISANIE2']['VALUE'][$key]['TEXT'] ?></p>
-	                        </div>
-
-                    	<? } ?>
+	                    	<? foreach($arResult["PROPERTIES"]['TECH_OPISANIE1']['VALUE'] as $key => $item){ ?>
 
 
-                        <!-- <div class="single-product-info__desc-content">
-                            <span>Комплект для крепления <br> включен в поставку</span>
-                            <p>В одном кв.м. 20 штук. Упаковка 20 штук. </p>
-                        </div>
-                        <div class="single-product-info__desc-content">
-                            <span>Размер</span>
-                            <p>400х200х9 мм</p>
-                        </div> -->
-                    </div>
-                </div>
+		                        <div class="single-product-info__desc-content">
+		                            <span><?= $item ?></span>
+		                            <p><?= $arResult["PROPERTIES"]['TECH_OPISANIE2']['VALUE'][$key]['TEXT'] ?></p>
+		                        </div>
+
+	                    	<? } ?>
 
 
-                <div class="single-product-info__item downloads">
-                    <div class="single-product-info__title">
-                        <p>
-                            Загрузки
-                        </p>
-                    </div>
-                    <div class="single-product-info__desc">
+	                    </div>
+	                </div>
+	            <? } ?>
 
-                    	<? foreach($arResult["PROPERTIES"]['FILES']['VALUE'] as $key => $item){ ?>
+                <? if($arResult["PROPERTIES"]['FILES']['VALUE']){?>
+	                <div class="single-product-info__item downloads">
+	                    <div class="single-product-info__title">
+	                        <p>
+	                             <?$APPLICATION->IncludeComponent(
+			                        "bitrix:main.include",
+			                        "",
+			                        Array(
+			                            "AREA_FILE_SHOW" => "file",
+			                            "AREA_FILE_SUFFIX" => "inc",
+			                            "EDIT_TEMPLATE" => "",
+			                            "PATH" => $GLOBALS['lang'] . "/include/product/title-donwload.php"
+			                        )
+			                    );?>
+	                        </p>
+	                    </div>
+	                    <div class="single-product-info__desc">
 
-                    		<?
-                    			// SIZE FILE
-                    			$arFile = CFile::GetFileArray($item);
+	                    	<? foreach($arResult["PROPERTIES"]['FILES']['VALUE'] as $key => $item){ ?>
 
-                    		?>
+	                    		<?
+	                    			// SIZE FILE
+	                    			$arFile = CFile::GetFileArray($item);
 
-	                        <div class="single-product-info__desc-content">
-	                            <span><?= $arResult["PROPERTIES"]['FILES_NAME']['VALUE'][$key] ?> (<?= convert_bytes($arFile['FILE_SIZE']) ?>)</span>
-	                            <a download href="<?= CFile::GetPath($item); ?>">Скачать</a>
-	                        </div>
+	                    		?>
 
-                    	<? } ?>
+		                        <div class="single-product-info__desc-content">
+		                            <span><?= $arResult["PROPERTIES"]['FILES_NAME']['VALUE'][$key] ?> (<?= convert_bytes($arFile['FILE_SIZE']) ?>)</span>
+		                            <a download href="<?= CFile::GetPath($item); ?>">Скачать</a>
+		                        </div>
+
+	                    	<? } ?>
 
 
 
-                    </div>
-                </div>
-
+	                    </div>
+	                </div>
+            	<? } ?>
 
             </div>
             <div class="single-product-registration">
                 <p>Что-бы получить больше материалов, зарегестрируйтесь</p>
-                <a href="#" class="btn">Регистрация</a>
+                <a href="<? echo ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] ?>/auth/registration.php" class="btn">Регистрация</a>
             </div>
         </div>
     </section>
